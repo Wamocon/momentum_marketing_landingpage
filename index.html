@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Momentum — Marketing-Plattform für Teams | Kampagnen, Content & Budget in einer App</title>
   <meta name="description"
-    content="Schluss mit Tool-Fragmentierung. Momentum vereint Kampagnen-Management, Content-Kalender, Customer Journey, Zielgruppen und Budget-Controlling in einer DSGVO-konformen SaaS-Plattform.">
+    content="Schluss mit Tool-Fragmentierung. Momentum vereint Kampagnen-Management, Content-Kalender, Customer Journey, Zielgruppen und Budget-Controlling in einer DSGVO-konformen SaaS-Plattform. V2: Multi-Tenancy, 4-Rollen-System und Echtzeit-Benachrichtigungen.">
   <meta name="keywords"
     content="Marketing Plattform, Kampagnen Management Software, Content Kalender, Marketing SaaS, Team Collaboration Marketing, Budget Controlling Marketing, Customer Journey Mapping, Marketing Automatisierung, DSGVO Marketing Software">
   <meta name="robots" content="index, follow">
@@ -46,7 +46,7 @@
       {"@type": "Question", "name": "Für welche Unternehmen ist Momentum geeignet?", "acceptedAnswer": {"@type": "Answer", "text": "Momentum richtet sich an Marketing-Teams in KMUs und mittleren bis großen Unternehmen (5–500 Mitarbeiter), die ihre Kampagnen-Orchestrierung professionalisieren wollen."}},
       {"@type": "Question", "name": "Wie unterscheidet sich Momentum von HubSpot?", "acceptedAnswer": {"@type": "Answer", "text": "Momentum fokussiert auf die interne Teamorganisation: Rollen, Workflows und Kollaboration. Es ist kein CRM, sondern eine Plattform zur Orchestrierung des gesamten Marketing-Prozesses — von der Strategie bis zur Aufgabe."}},
       {"@type": "Question", "name": "Ist Momentum DSGVO-konform?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Alle Daten werden in EU-Rechenzentren (eu-central-1) via Supabase PostgreSQL gespeichert. DSGVO-konforme Datenverarbeitung, keine Weitergabe an Dritte."}},
-      {"@type": "Question", "name": "Welche Rollen gibt es in Momentum?", "acceptedAnswer": {"@type": "Answer", "text": "Momentum kennt drei Rollen: Admin (Vollzugriff, User-Management, Positionierung), Manager (Kampagnen, Budget, Team-Koordination) und Member (eigene Aufgaben, Content-Produktion)."}},
+      {"@type": "Question", "name": "Welche Rollen gibt es in Momentum?", "acceptedAnswer": {"@type": "Answer", "text": "Momentum kennt vier Rollen: Super-Admin (globale Plattform-Verwaltung, alle Projekte), Unternehmens-Admin (Vollzugriff, User-Management, Positionierung), Manager (Kampagnen, Budget, Team-Koordination) und Member (eigene Aufgaben, Content-Produktion)."}},
       {"@type": "Question", "name": "Wie funktioniert der KI-Assistent?", "acceptedAnswer": {"@type": "Answer", "text": "Der KI-Assistent generiert automatisch Briefings für Aufgaben, analysiert Content-Performance und unterstützt im 10-stufigen Creative-Workflow von der Idee bis zur Veröffentlichung."}}
     ]
   }
@@ -163,7 +163,7 @@
     <div class="w-full max-w-[1100px] mx-auto px-5 md:px-10 flex items-center justify-between">
       <a href="#" class="hover:opacity-70 transition-opacity flex items-center gap-2"
         style="font-size:1.8rem;font-weight:900;letter-spacing:-1px;color:#c1292e;text-decoration:none;">
-        MOMENTUM
+        MOMENTUM<span style="display:inline-block;font-size:.52rem;font-weight:800;letter-spacing:.10em;padding:2px 7px;border-radius:5px;background:rgba(245,158,11,.15);color:#d97706;border:1px solid rgba(245,158,11,.38);margin-left:9px;vertical-align:middle;line-height:1.5;">V2</span>
       </a>
       <div class="hidden md:flex items-center gap-4">
         <div class="nav-links-pill">
@@ -540,14 +540,75 @@
       <div class="text-center mb-16">
         <span class="reveal inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full mb-5"
           style="color:#c1292e;background:rgba(193,41,46,.06);border:1px solid rgba(193,41,46,.14);">Rollenbasierter Zugriff</span>
-        <h2 class="reveal text-3xl md:text-5xl font-bold leading-[1.1] tracking-tight mb-5">Drei Rollen.<br>Eine Plattform.</h2>
+        <h2 class="reveal text-3xl md:text-5xl font-bold leading-[1.1] tracking-tight mb-5">Vier Rollen.<br>Eine Plattform. <span style="display:inline-block;font-size:.5rem;font-weight:800;letter-spacing:.10em;padding:2px 8px;border-radius:5px;background:rgba(245,158,11,.15);color:#d97706;border:1px solid rgba(245,158,11,.38);vertical-align:middle;line-height:1.5;">V2</span></h2>
         <p class="reveal text-lg max-w-[620px] mx-auto leading-relaxed" style="color:var(--color-muted);">
           Jede Rolle sieht genau das, was sie braucht — nicht mehr, nicht weniger.
         </p>
       </div>
       <div class="grid grid-cols-1 gap-8">
 
-        <!-- Admin -->
+        <!-- Super-Admin (V2 NEU) -->
+        <div class="reveal rounded-2xl overflow-hidden"
+          style="border:1.5px solid rgba(245,158,11,.30);box-shadow:0 12px 56px rgba(245,158,11,.10);background:linear-gradient(165deg,rgba(245,158,11,.04) 0%,var(--color-surface) 50%);">
+          <div class="px-8 py-6 flex items-center gap-5 role-header"
+            style="background:linear-gradient(135deg,rgba(245,158,11,.12),rgba(245,158,11,.04));border-bottom:1px solid rgba(245,158,11,.15);">
+            <div style="width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,rgba(245,158,11,.22),rgba(245,158,11,.08));border:1px solid rgba(245,158,11,.32);display:flex;align-items:center;justify-content:center;">
+              <svg class="icon w-7 h-7" style="color:#f59e0b;fill:none;stroke:currentColor;stroke-width:2;"><use href="#i-user-cog"/></svg>
+            </div>
+            <div style="flex:1;">
+              <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#f59e0b;margin-bottom:3px;display:flex;align-items:center;gap:8px;">Globale Ebene <span style="font-size:.58rem;font-weight:800;padding:1px 6px;border-radius:4px;background:rgba(245,158,11,.2);color:#d97706;border:1px solid rgba(245,158,11,.4);">V2 NEU</span></div>
+              <h3 class="text-2xl font-bold">Super-Admin &nbsp;<span style="font-size:.85rem;font-weight:500;color:var(--color-muted);">(Plattform-Verwaltung)</span></h3>
+            </div>
+          </div>
+          <div class="grid grid-cols-2" style="border-bottom:1px solid rgba(245,158,11,.10);">
+            <div style="padding:10px 28px;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9a7a20;background:rgba(245,158,11,.03);">Vorher</div>
+            <div style="padding:10px 28px;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f59e0b;background:rgba(245,158,11,.04);border-left:2px solid rgba(245,158,11,.15);">Mit Momentum</div>
+          </div>
+          <div class="grid grid-cols-2" style="border-top:1px solid rgba(245,158,11,.08);">
+            <div class="px-8 py-5" style="background:rgba(245,158,11,.02);">
+              <div class="flex items-start gap-3">
+                <svg width="15" height="15" viewBox="0 0 16 16" class="shrink-0 mt-0.5" style="color:#cc4444;"><line x1="3" y1="3" x2="13" y2="13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="13" y1="3" x2="3" y2="13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+                <span class="text-sm leading-relaxed" style="color:#999;text-decoration:line-through;text-decoration-color:rgba(245,158,11,.3);">Kein übergreifender Zugriff auf mehrere Projekte gleichzeitig</span>
+              </div>
+            </div>
+            <div class="px-8 py-5" style="background:linear-gradient(135deg,rgba(245,158,11,.055),rgba(245,158,11,.015));border-left:2px solid rgba(245,158,11,.22);">
+              <div class="flex items-start gap-3">
+                <svg class="icon w-5 h-5 shrink-0 mt-0.5" style="color:#f59e0b;fill:none;stroke:currentColor;stroke-width:2;"><use href="#i-check"/></svg>
+                <span class="text-sm leading-relaxed"><strong>Super-Admin Panel</strong> — alle Projekte und Nutzer zentral auf einer globalen Ebene verwalten</span>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2" style="border-top:1px solid rgba(245,158,11,.08);">
+            <div class="px-8 py-5" style="background:rgba(245,158,11,.02);">
+              <div class="flex items-start gap-3">
+                <svg width="15" height="15" viewBox="0 0 16 16" class="shrink-0 mt-0.5" style="color:#cc4444;"><line x1="3" y1="3" x2="13" y2="13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="13" y1="3" x2="3" y2="13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+                <span class="text-sm leading-relaxed" style="color:#999;text-decoration:line-through;text-decoration-color:rgba(245,158,11,.3);">Rollenvergabe erfordert manuelle IT-Koordination pro Projekt</span>
+              </div>
+            </div>
+            <div class="px-8 py-5" style="background:linear-gradient(135deg,rgba(245,158,11,.055),rgba(245,158,11,.015));border-left:2px solid rgba(245,158,11,.22);">
+              <div class="flex items-start gap-3">
+                <svg class="icon w-5 h-5 shrink-0 mt-0.5" style="color:#f59e0b;fill:none;stroke:currentColor;stroke-width:2;"><use href="#i-check"/></svg>
+                <span class="text-sm leading-relaxed"><strong>Globales Rollen-Management</strong> — Nutzer Projekten direkt zuweisen und Rollen pro Projekt ändern</span>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-2" style="border-top:1px solid rgba(245,158,11,.08);">
+            <div class="px-8 py-5" style="background:rgba(245,158,11,.02);">
+              <div class="flex items-start gap-3">
+                <svg width="15" height="15" viewBox="0 0 16 16" class="shrink-0 mt-0.5" style="color:#cc4444;"><line x1="3" y1="3" x2="13" y2="13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="13" y1="3" x2="3" y2="13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+                <span class="text-sm leading-relaxed" style="color:#999;text-decoration:line-through;text-decoration-color:rgba(245,158,11,.3);">Kein Multi-Tenancy — ein Tool, ein Team, ein Projekt</span>
+              </div>
+            </div>
+            <div class="px-8 py-5" style="background:linear-gradient(135deg,rgba(245,158,11,.055),rgba(245,158,11,.015));border-left:2px solid rgba(245,158,11,.22);">
+              <div class="flex items-start gap-3">
+                <svg class="icon w-5 h-5 shrink-0 mt-0.5" style="color:#f59e0b;fill:none;stroke:currentColor;stroke-width:2;"><use href="#i-check"/></svg>
+                <span class="text-sm leading-relaxed"><strong>Multi-Tenancy</strong> — mehrere unabhängige Projekte pro Nutzer mit vollständiger Datentrennung</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admin (jetzt: Unternehmens-Admin) -->
         <div class="reveal rounded-2xl overflow-hidden"
           style="border:1.5px solid rgba(193,41,46,.22);box-shadow:0 12px 56px rgba(193,41,46,.09);background:linear-gradient(165deg,rgba(193,41,46,.035) 0%,var(--color-surface) 50%);">
           <div class="px-8 py-6 flex items-center gap-5 role-header"
@@ -557,7 +618,7 @@
             </div>
             <div>
               <div style="font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#c1292e;margin-bottom:3px;">Vollzugriff</div>
-              <h3 class="text-2xl font-bold">Admin &nbsp;<span style="font-size:.85rem;font-weight:500;color:var(--color-muted);">(Geschäftsführung / IT)</span></h3>
+              <h3 class="text-2xl font-bold">Unternehmens-Admin &nbsp;<span style="font-size:.85rem;font-weight:500;color:var(--color-muted);">(Projekt-Ebene)</span></h3>
             </div>
           </div>
           <div class="grid grid-cols-2" style="border-bottom:1px solid rgba(193,41,46,.08);">
@@ -743,7 +804,7 @@
         Alles, was das<br>Marketing-Team braucht
       </h2>
       <p class="reveal text-lg max-w-[620px] mx-auto leading-relaxed" style="color:var(--color-muted);">
-        Acht Kernbereiche. Vollständig integriert. Keine Insellösungen.
+        Neun Kernbereiche. Vollständig integriert. Keine Insellösungen.
       </p>
       <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5">
 
@@ -833,6 +894,7 @@
 
         <!-- 7 Notifications -->
         <div class="reveal p-7 rounded-2xl bg-surface border border-border text-left card-hover accent-hover" style="position:relative;overflow:hidden;">
+          <div style="position:absolute;top:12px;right:12px;font-size:.58rem;font-weight:800;letter-spacing:.08em;padding:2px 7px;border-radius:4px;background:rgba(245,158,11,.13);color:#d97706;border:1px solid rgba(245,158,11,.33);">V2 NEU</div>
           <div class="flex items-start gap-4">
             <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
               style="background:rgba(193,41,46,.06);border:1px solid rgba(193,41,46,.18);color:#c1292e;">
@@ -855,6 +917,21 @@
             <div>
               <h3 class="font-semibold text-lg mb-1">Digitale Positionierung</h3>
               <p class="text-sm leading-relaxed" style="color:var(--color-muted);">Unternehmens-DNA (Name, Tagline, Branche), Vision &amp; Mission, 5 Unternehmenswerte, Tone-of-Voice, Dos &amp; Don'ts, Keywords, Zielmarkt. Nur für Admins bearbeitbar — Manager und Members lesen.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9 Multi-Tenancy & Super-Admin (V2 NEU) -->
+        <div class="reveal p-7 rounded-2xl text-left card-hover" style="position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(245,158,11,.04) 0%,var(--color-surface) 60%);border:1px solid rgba(245,158,11,.22);">
+          <div style="position:absolute;top:12px;right:12px;font-size:.58rem;font-weight:800;letter-spacing:.08em;padding:2px 7px;border-radius:4px;background:rgba(245,158,11,.15);color:#d97706;border:1px solid rgba(245,158,11,.35);">V2 NEU</div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+              style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.22);color:#f59e0b;">
+              <svg class="icon w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"><use href="#i-user-cog"/></svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg mb-1">Multi-Tenancy &amp; Super-Admin</h3>
+              <p class="text-sm leading-relaxed" style="color:var(--color-muted);">Mehrere unabhängige Projekte pro Nutzer. Super-Admin Panel zur globalen Verwaltung aller Projekte und Benutzer. Projekt-Auswahl nach Login, vollständige Datentrennung und direkte Rollenvergabe pro Projekt.</p>
             </div>
           </div>
         </div>
@@ -890,6 +967,8 @@
         <div class="px-5 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap" style="background:rgba(193,41,46,.06);border:1px solid rgba(193,41,46,.14);color:var(--color-text-main);">DSGVO-konform</div>
         <div class="px-5 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap" style="background:rgba(193,41,46,.06);border:1px solid rgba(193,41,46,.14);color:var(--color-text-main);">KI-Assistent</div>
         <div class="px-5 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap" style="background:rgba(193,41,46,.06);border:1px solid rgba(193,41,46,.14);color:var(--color-text-main);">Turbopack</div>
+        <div class="px-5 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap" style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.30);color:#d97706;font-weight:700;">Supabase Realtime ✨ V2</div>
+        <div class="px-5 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap" style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.30);color:#d97706;font-weight:700;">Multi-Tenancy ✨ V2</div>
         <!-- Duplicate for seamless loop -->
         <div class="px-5 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap" style="background:rgba(193,41,46,.06);border:1px solid rgba(193,41,46,.14);color:var(--color-text-main);">Next.js 16</div>
         <div class="px-5 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap" style="background:rgba(193,41,46,.06);border:1px solid rgba(193,41,46,.14);color:var(--color-text-main);">React 19</div>
@@ -903,6 +982,8 @@
         <div class="px-5 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap" style="background:rgba(193,41,46,.06);border:1px solid rgba(193,41,46,.14);color:var(--color-text-main);">DSGVO-konform</div>
         <div class="px-5 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap" style="background:rgba(193,41,46,.06);border:1px solid rgba(193,41,46,.14);color:var(--color-text-main);">KI-Assistent</div>
         <div class="px-5 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap" style="background:rgba(193,41,46,.06);border:1px solid rgba(193,41,46,.14);color:var(--color-text-main);">Turbopack</div>
+        <div class="px-5 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap" style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.30);color:#d97706;font-weight:700;">Supabase Realtime ✨ V2</div>
+        <div class="px-5 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap" style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.30);color:#d97706;font-weight:700;">Multi-Tenancy ✨ V2</div>
       </div>
     </div>
 
@@ -910,14 +991,14 @@
     <div class="max-w-[1100px] mx-auto px-5 md:px-10 mt-14">
       <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-4">
         <div class="p-6 rounded-2xl text-center" style="background:var(--color-surface);border:1px solid var(--color-border);">
-          <div class="text-3xl font-black tracking-tight mb-1" style="color:#c1292e;">17</div>
-          <div class="text-sm font-semibold mb-1">Datenbank-Tabellen</div>
+          <div class="text-3xl font-black tracking-tight mb-1" style="color:#c1292e;">19</div>
+          <div class="text-sm font-semibold mb-1">Datenbank-Tabellen <span style="font-size:.55rem;font-weight:800;padding:1px 5px;border-radius:3px;background:rgba(245,158,11,.15);color:#d97706;border:1px solid rgba(245,158,11,.35);">V2</span></div>
           <div class="text-xs" style="color:var(--color-muted);">Supabase PostgreSQL, RLS aktiviert</div>
         </div>
         <div class="p-6 rounded-2xl text-center" style="background:var(--color-surface);border:1px solid var(--color-border);">
-          <div class="text-3xl font-black tracking-tight mb-1" style="color:#c1292e;">18</div>
-          <div class="text-sm font-semibold mb-1">Berechtigungen (RBAC)</div>
-          <div class="text-xs" style="color:var(--color-muted);">Granulare Rollen-Matrix für Admin / Manager / Member</div>
+          <div class="text-3xl font-black tracking-tight mb-1" style="color:#c1292e;">19</div>
+          <div class="text-sm font-semibold mb-1">Berechtigungen (RBAC) <span style="font-size:.55rem;font-weight:800;padding:1px 5px;border-radius:3px;background:rgba(245,158,11,.15);color:#d97706;border:1px solid rgba(245,158,11,.35);">V2</span></div>
+          <div class="text-xs" style="color:var(--color-muted);">Granulare Rollen-Matrix für 4 Rollen (Super-Admin bis Member)</div>
         </div>
         <div class="p-6 rounded-2xl text-center" style="background:var(--color-surface);border:1px solid var(--color-border);">
           <div class="text-3xl font-black tracking-tight mb-1" style="color:#c1292e;">27</div>
@@ -974,7 +1055,7 @@
           </button>
           <div class="faq-answer">
             <div class="pb-5 px-2 pl-12 text-sm leading-relaxed" style="color:var(--color-muted);">
-              <strong>Admin</strong> hat Vollzugriff: Positionierung bearbeiten, User-Management, alle Einstellungen, Budget und alle Kampagnen. <strong>Manager</strong> erstellt und bearbeitet Kampagnen, verwaltet das Budget, weist Aufgaben zu und sieht alle Kampagnen. <strong>Member</strong> sieht nur zugewiesene Kampagnen, bearbeitet eigene Aufgaben und Content — kein Budget-Zugriff. Die Rollen-Matrix umfasst 18 granulare Berechtigungen.
+              <strong>Super-Admin</strong> hat globalen Zugriff auf alle Projekte und Benutzer der Plattform. <strong>Unternehmens-Admin</strong> hat Vollzugriff auf ein Projekt: Positionierung, User-Management, Budget, alle Einstellungen. <strong>Manager</strong> erstellt und bearbeitet Kampagnen, verwaltet Budget, weist Aufgaben zu. <strong>Member</strong> sieht nur zugewiesene Kampagnen, bearbeitet eigene Aufgaben und Content — kein Budget-Zugriff. Die Rollen-Matrix umfasst 19 granulare Berechtigungen.
             </div>
           </div>
         </div>
@@ -1000,7 +1081,7 @@
           </button>
           <div class="faq-answer">
             <div class="pb-5 px-2 pl-12 text-sm leading-relaxed" style="color:var(--color-muted);">
-              Ja. Alle Daten werden ausschließlich in EU-Rechenzentren (eu-central-1) via Supabase PostgreSQL gespeichert. Row Level Security (RLS) ist auf allen 17 Datenbank-Tabellen aktiviert. Es findet keine Weitergabe von Daten an Dritte statt. Die Plattform ist von Grund auf für den europäischen Markt konzipiert.
+              Ja. Alle Daten werden ausschließlich in EU-Rechenzentren (eu-central-1) via Supabase PostgreSQL gespeichert. Row Level Security (RLS) ist auf allen 19 Datenbank-Tabellen aktiviert. Es findet keine Weitergabe von Daten an Dritte statt. Die Plattform ist von Grund auf für den europäischen Markt konzipiert.
             </div>
           </div>
         </div>
@@ -1034,6 +1115,19 @@
         <div class="faq-item">
           <button class="faq-question flex items-center gap-4 w-full text-left py-5 px-2 cursor-pointer bg-transparent border-0" style="font-family:inherit;">
             <span style="font-size:.7rem;font-weight:700;letter-spacing:.09em;color:#c1292e;opacity:.8;min-width:26px;padding-top:3px;flex-shrink:0;">08</span>
+            <span class="flex-1 font-semibold text-base">Was ist Multi-Tenancy und warum ist das relevant? <span style="display:inline-flex;align-items:center;font-size:.6rem;font-weight:800;letter-spacing:.08em;padding:1px 6px;border-radius:4px;background:rgba(245,158,11,.15);color:#d97706;border:1px solid rgba(245,158,11,.35);margin-left:6px;vertical-align:middle;">V2 NEU</span></span>
+            <span class="faq-question__icon relative w-5 h-5 shrink-0"></span>
+          </button>
+          <div class="faq-answer">
+            <div class="pb-5 px-2 pl-12 text-sm leading-relaxed" style="color:var(--color-muted);">
+              Multi-Tenancy bedeutet, dass ein Nutzer mehreren unabhängigen Projekten (Mandanten) angehören kann — mit vollständiger Datentrennung. Nach dem Login wählt jeder Nutzer sein aktives Projekt. Der <strong>Super-Admin</strong> hat zusätzlich ein globales Panel, über das alle Projekte und Nutzer der Plattform verwaltet werden können — inklusive Rollenvergabe pro Projekt. Das ist besonders relevant für Agenturen, die mehrere Kunden-Workspaces, oder Unternehmen, die mehrere Marken in einem System betreiben.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question flex items-center gap-4 w-full text-left py-5 px-2 cursor-pointer bg-transparent border-0" style="font-family:inherit;">
+            <span style="font-size:.7rem;font-weight:700;letter-spacing:.09em;color:#c1292e;opacity:.8;min-width:26px;padding-top:3px;flex-shrink:0;">09</span>
             <span class="flex-1 font-semibold text-base">Was kostet Momentum?</span>
             <span class="faq-question__icon relative w-5 h-5 shrink-0"></span>
           </button>
@@ -1153,7 +1247,7 @@
         </a>
       </div>
       <p class="reveal mt-8 text-sm" style="color:#5a5a62;">
-        Keine Kreditkarte erforderlich. Demo-Zugänge für alle 3 Rollen (Admin, Manager, Member) sofort verfügbar.
+        Keine Kreditkarte erforderlich. Demo-Zugänge für alle 4 Rollen (Super-Admin, Admin, Manager, Member) sofort verfügbar.
       </p>
     </div>
   </section>
@@ -1202,7 +1296,7 @@
       </div>
       <div style="border-top:1px solid rgba(255,255,255,.05);padding-top:1.5rem;display:flex;flex-direction:column;align-items:center;gap:6px;">
         <p style="color:#4a4a52;font-size:.7rem;">&copy; 2026 Momentum. Alle Rechte vorbehalten. &nbsp;|&nbsp; DSGVO-konform &nbsp;|&nbsp; EU-Hosting</p>
-        <p style="color:#3a3a42;font-size:.65rem;">Momentum ist eine SaaS-Plattform. Version 0.8.1 — Phase 1 (Supabase Backend-Integration vollständig)</p>
+        <p style="color:#3a3a42;font-size:.65rem;">Momentum ist eine SaaS-Plattform. Version 1.1.0 — Phase 2.5 (Multi-Tenancy + Realtime Notification System)</p>
       </div>
     </div>
   </footer>
